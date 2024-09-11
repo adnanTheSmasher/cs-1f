@@ -1,3 +1,0 @@
-print("Hello")
-input num 
-input num2
