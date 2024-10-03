@@ -1,6 +1,7 @@
 /*
-Using do-while loop would be better for taking user input  as it allows user a choice if user wants to comtinue or not if not it will exit or else it will continue.
-from the given example it could be seen that using do-while loop is much more efficient and effective when taking user inputs atleast 1 time
+Answer:
+	Using do-while loop would be better for taking user input  as it allows user a choice if user wants to comtinue or not if not it will exit or else it will continue.
+	from the given example it could be seen that using do-while loop is much more efficient and effective when taking user inputs atleast 1 time
 */
 #include<stdio.h>
 int main(){
