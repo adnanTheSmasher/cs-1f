@@ -9,7 +9,6 @@ int main() {
         temp[i] = -1;
     }
 
-    // Count occurrences
     for (int i = 0; i < 10; i++) {
         count = 1; 
         if (temp[i] == -1) { 
