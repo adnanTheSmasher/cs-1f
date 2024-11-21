@@ -30,19 +30,19 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 });
 
-// Function to handle currency conversion
+// ye function currenccy ko convert karega agr valid amount howi to
 async function convertCurrency() {
     const amount = parseFloat(document.getElementById('amount').value);
     const fromCurrency = document.getElementById('fromCurrency').value;
     const toCurrency = document.getElementById('toCurrency').value;
 
-    // Check if the amount is valid and non-negative
+    // ye bus check akrega k amount valid hai ya nahi above 0 honi chahiye
     if (isNaN(amount) || amount < 0) {
         document.getElementById('result').textContent = 'Please enter a valid amount (greater than or equal to 0).';
         return;
     }
 
-    try {
+    try {        // ye try wala block api key ke andar request bheja wo currency k sath jisse conversion karana hoga 
         const apiKey = '215d34cef366f49d5001ae75';
         const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${fromCurrency}`;
 
@@ -50,7 +50,7 @@ async function convertCurrency() {
         const data = await response.json();
 
         if (data.result === 'success') {
-            const rate = data.conversion_rates[toCurrency];
+            const rate = data.conversion_rates[toCurrency];        // agr data fetch ho jata hai to convert hogi currency wawrna error show hoga 
             const convertedAmount = amount * rate;
             document.getElementById('result').textContent = `${amount} ${fromCurrency} is equal to ${convertedAmount.toFixed(2)} ${toCurrency}`;
         } else {
@@ -62,10 +62,10 @@ async function convertCurrency() {
     }
 }
 
-// Event listener for the Convert button
+// ye bus ye dekhi ga k button ko press kiya k nahi agr press kiya to convert currency wala function call hoga
 document.getElementById('convertButton').addEventListener('click', convertCurrency);
 
-// Event listener for the Enter key on the amount input
+// ye dekhe ga enter key press ki k nahi
 document.getElementById('amount').addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         convertCurrency();
