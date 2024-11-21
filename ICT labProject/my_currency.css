@@ -19,34 +19,34 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px; /* Add spacing between the form and the image */
+    gap: 20px; 
 }
 
 .container {
     background: #e0e4cd;
     width: 100%;
-    max-width: 400px; /* Increased max-width for a more spacious look */
+    max-width: 400px; /* bus container k width thori set ki hai */
     padding: 30px 35px;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for depth */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* ye thora shadow is leye hai */
     text-align: center;
     transition: transform 0.3s ease-in-out;
     position: relative;
 }
 
-@property --angle{
+@property --angle{            /* ye angle naam k variable ko property set ki hai take animation chal sake */
     syntax: "<angle>";
     initial-value: 0deg;
     inherits: false;
 }
 
-.container::after, .container::before{
+.container::after, .container::before{  /* ye apna jo main container hai uske piche ek or caontainer banaya hai take bordders par animation show kar sake */
     content: '';
     position: absolute;
     height: 100%;
     width: 100%;
     background-image: conic-gradient(from var(--angle), #e0e4cd, #767674, #b0bec5, #5a5757, #e0e4cd);
-    top: 50%;
+    top: 50%;   /* ye bus thori setting ki hai alighnment ki */
     translate: -50% -50%;
     z-index: -1;
     padding: 5px;
@@ -54,12 +54,12 @@ body {
     animation: 5s spin linear infinite;    
 }
 
-.container::before{
+.container::before{     
     filter: blur(1.5rem);
     opacity: 0.5;
 }
 
-@keyframes spin {
+@keyframes spin {         /* ye animation ke leye banaya hai ek spin type ki animation jo 360 ghume gi */
     form{
         --angle: 0deg 
     }
@@ -118,7 +118,7 @@ button {
     transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 
-button::after{
+button::after{             /* ye wahi uper wala kaam hai jo container k saath kiya tha */
     content: "";
     z-index: -1;
     position: absolute;
@@ -198,14 +198,14 @@ p#result {
 
 
 .floating-image {
-    max-width: 400px; /* Adjusted to match the container width */
+    max-width: 400px; /* picture k size set ki hai */
     width: 100%;
-    height: auto; /* Maintain the image's aspect ratio */
-    border-radius: 8px; /* Optional: rounded edges for consistency */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow effect */
+    height: auto;
+    border-radius: 8px; /* look k leye kiya hai */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ye bhi look k leye hai */
 }
 
-/* Media Query for Responsiveness */
+/* ye responsive banane k leye */
 @media (max-width: 480px) {
     .container {
         padding: 20px 25px;
@@ -213,7 +213,7 @@ p#result {
     }
 
     .floating-image {
-        max-width: 90%; /* Adjust image size for smaller screens */
+        max-width: 90%; /* size thori small hogai ji */
     }
 
     h1 {
